@@ -10,8 +10,10 @@ import Typography from "@mui/material/Typography";
 import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import SkipNextIcon from "@mui/icons-material/SkipNext";
-import valorant from "../imgs/valorant.jpg"
-import sacHospitality from "../imgs/sacHospitality.jpg"
+import valorant from "../imgs/valorant.jpg";
+import sacHospitality from "../imgs/sacHospitality.jpg";
+import techTalk from "../imgs/tt.png";
+import { Link } from '@mui/material';
 
 const Portfolio = ({}) => {
   const theme = useTheme();
@@ -22,12 +24,21 @@ const Portfolio = ({}) => {
           title: "Valorant Health",
           subtitle: "UX Engineer",
           text: "Valorant Health is a tele-health start-up based in Berkeley, CA. I designed mockups for the web and mobile application with AdobeXD and developed components using React.",
+          link: "www.valoranthealth.com"
       },
       {
         img: sacHospitality,
         subtitle: "UX Designer + Software Developer",
         title: "Sacramento Hospitality Group",
         text: "Sacramento Hospitality Group was founded in 2019. Since then, we have created five original nonprofit events that helped fundraise for homelessness, COVID-19 relief and civil rights organizations.We have worked with Loaves and Fishes, Direct Relief Fund, The World Health Organization, United Way, NAACP and more.",
+        link: "www.sacramento.com"
+    },
+    {
+        img: techTalk,
+        subtitle: "UX Engineer",
+        title: "Tech Talk",
+        text: "Tech-Talk is a professional network for women in technology. This is the perfect place for ambitious women to connect and make things happen. Whether you are searching for a job opportunity, looking for a mentor to guide you through this bustling industry, or just have questions about the tech field you're in, Tech-Talk is the community to join.",
+        link: "https://tech-talk-wit.herokuapp.com/"
     }
     ]
 
@@ -81,6 +92,22 @@ const Portfolio = ({}) => {
               alignItems: "center",
             }}
           >
+                  <Link href={d.link} style={{textTransform: "none"}}>
+
+                      <CardMedia>
+              <img
+                src={d.img}
+                alt="Valorant-Health-New-Service-Logo"
+                border="0"
+                height="300"
+                style={{
+                  borderRadius: "10%",
+                  boxShadow: "1px 6px 1px #E6E6E6",
+                }}
+              ></img>
+            </CardMedia>
+                      </Link>
+
             <Box
               sx={{ display: "flex", flexDirection: "column", margin: "4%" }}
             >
@@ -115,80 +142,9 @@ const Portfolio = ({}) => {
                 </Box>
               </CardContent>
             </Box>
-            <CardMedia>
-              <img
-                src={d.img}
-                alt="Valorant-Health-New-Service-Logo"
-                border="0"
-                height="300"
-                style={{
-                  borderRadius: "10%",
-                  boxShadow: "1px 6px 1px #E6E6E6",
-                }}
-              ></img>
-            </CardMedia>
           </Card>
         </div>
       ))}
-          {/* <Card
-            sx={{
-              display: "flex",
-              borderRadius: "5%",
-            //   maxWidth: 800,
-            marginRight: "12%",
-            marginLeft: "12%",
-              alignItems: "center",
-            }}
-          >
-            <Box
-              sx={{ display: "flex", flexDirection: "column", margin: "4%" }}
-            >
-              <CardContent sx={{ flex: "1 0 auto" }}>
-                <Typography
-                  component="div"
-                  fontSize="28px"
-                  fontFamily="avenir"
-                  fontWeight="500"
-                >
-                  Valorant Health
-                </Typography>
-                <Typography
-                  variant="subtitle1"
-                  fontSize="20px"
-                  fontWeight="600"
-                  fontFamily="avenir"
-                  color="#407BFF"
-                  component="div"
-                >
-                  UX Engineer
-                </Typography>
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    margin: "3%",
-                    fontSize: "17px",
-                  }}
-                >
-                  Valorant Health is a tele-health start-up based in Berkeley,
-                  CA. I designed mockups for the web and mobile application with
-                  AdobeXD and developed components using React.
-                </Box>
-              </CardContent>
-            </Box>
-            <CardMedia>
-              <img
-                src="https://i.ibb.co/dcrdLfG/Valorant-Health-New-Service-Logo.jpg"
-                alt="Valorant-Health-New-Service-Logo"
-                border="0"
-                height="300"
-                style={{
-                  borderRadius: "10%",
-                  boxShadow: "1px 6px 1px #E6E6E6",
-                }}
-              ></img>
-            </CardMedia>
-          </Card> */}
         </div>
       </div>
     </div>

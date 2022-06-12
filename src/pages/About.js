@@ -13,16 +13,19 @@ import react from "../imgs/react.png";
 import figma from "../imgs/figma.webp";
 import html from "../imgs/html.png";
 import atlassian from "../imgs/atlassian.png";
-
+import { ResponsiveMasonry } from "react-responsive-masonry";
+import Masonry from "react-masonry-css";
+import Portfolio from "./Portfolio"
 
 // import { Image } from "@mui/icons-material";
 
 export default class About extends Component {
   render() {
+
     const designInfo = [
       {
-        img: adobeIcon,
-        text: "AdobeXD",
+        img: react,
+        text: "React",
       },
       {
         img: figma,
@@ -33,8 +36,8 @@ export default class About extends Component {
         text: "Github",
       },
       {
-        img: react,
-        text: "React",
+        img: adobeIcon,
+        text: "AdobeXD",
       },
       {
         img: js,
@@ -44,12 +47,8 @@ export default class About extends Component {
         img: html,
         text: "HTML",
       },
-      {
-        img: atlassian,
-        text: "Atlassian",
-      },
     ];
-    const devInfo = ["React", "Github"];
+    
     return (
       <div>
         <div
@@ -76,11 +75,16 @@ export default class About extends Component {
               flexDirection: "column",
               justifyContent: "center",
               maxWidth: 600,
-              //   marginTop: 40,
             }}
           >
             Passionate about the intersection between design and development
-            <Typography align="center">
+
+<Typography align="center">
+<a href="https://docs.google.com/document/d/1yG-KM8P53XoFjifVBGUsLYk9Td4qrmLo2lMX8AK0R5s/edit#heading=h.gdydvfgitvot"  style={{
+                  textDecoration: 'none',
+                  textTransform: "none",
+
+                }}>
               <Button
                 style={{
                   marginTop: "10%",
@@ -95,10 +99,14 @@ export default class About extends Component {
                   fontWeight: "500",
                   fontFamily: "Avenir",
                   letterSpacing: ".2rem",
+                  textDecoration: 'none',
+                  textTransform: "none",
+
                 }}
               >
-                My Work
+                My Resume
               </Button>
+              </a>
             </Typography>
           </p>
           <img
@@ -147,7 +155,7 @@ export default class About extends Component {
             <img
               src="https://i.ibb.co/qFsWFYn/kelly.png"
               alt="KellyImg"
-              height="200"
+              height="250"
               style={{
                 borderRadius: "50%",
                 boxShadow: "1px 6px 1px #E6E6E6",
@@ -169,8 +177,29 @@ export default class About extends Component {
           >
             Hi, I’m Kelly! I am a UX engineer and a recent software development
             graduate. I have an educational background in software development
-            and am self-taught in UX design. I am currently based in Los
-            Angeles, CA.
+            and am self-taught in UX design. My career interests are in software
+            engineering, ux design, and product management. I am currently based
+            in Los Angeles, CA.
+          </p>
+          <p
+            style={{
+              color: "#000000",
+              fontSize: "23px",
+              textAlign: "center",
+              fontWeight: "400",
+              fontFamily: "Avenir",
+              letterSpacing: ".1rem",
+              marginLeft: "10%",
+              marginRight: "10%",
+              margin: "5%",
+            }}
+          >
+            <b>Education:</b>
+            <br></br>B.S. Management, San Francisco State University
+            <br></br>
+            M.S. Software Development, Boston University
+            <br></br>
+            Certificate Full-Stack Development, UC Berkeley
           </p>
         </div>
 
@@ -197,19 +226,24 @@ export default class About extends Component {
               margin: "5%",
             }}
           >
-
-{designInfo.map((d, i) => (
-        <div key={`${d.name}-${i}`} style={{textAlign: "center"}}>
-        <p>{d.text}</p>
-        <img  style={{height: "70px"}}
-              src={d.img}
-              className="iconImg"
-              alt={d.name}
-            />
-                        <p style={styles.description}>{d.job}</p>
-
-        </div>
-      ))}
+            <Masonry
+              breakpointCols={3}
+              className="my-masonry-grid"
+              columnClassName="my-masonry-grid_column"
+            >
+              {designInfo.map((d, i) => (
+                <div key={`${d.name}-${i}`}>
+                  <p>{d.text}</p>
+                  <img
+                    style={{ height: "70px" }}
+                    src={d.img}
+                    className="iconImg"
+                    alt={d.name}
+                  />
+                  <p style={styles.description}>{d.job}</p>
+                </div>
+              ))}
+            </Masonry>
           </p>
         </div>
       </div>

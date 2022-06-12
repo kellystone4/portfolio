@@ -1,19 +1,21 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
+import Container from "@mui/material/Container";
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import Tooltip from "@mui/material/Tooltip";
+import MenuItem from "@mui/material/MenuItem";
+import AdbIcon from "@mui/icons-material/Adb";
+import { Modal } from "@mui/material";
+import Contact from "../pages/Contact";
 
-const pages = ['About', 'Portfolio', 'Contact'];
+const pages = ["About", "Portfolio"];
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -26,10 +28,12 @@ const ResponsiveAppBar = () => {
     setAnchorElNav(null);
   };
 
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
-    <AppBar position="static" style={{backgroundColor: "white",
-  }}>
+    <AppBar position="static" style={{ backgroundColor: "white" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -39,19 +43,19 @@ const ResponsiveAppBar = () => {
             href="/"
             sx={{
               mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'playfair display',
+              display: { xs: "none", md: "flex" },
+              fontFamily: "playfair display",
               fontWeight: 500,
-              letterSpacing: '.3rem',
-              color: 'black',
-              textDecoration: 'none',
+              letterSpacing: ".3rem",
+              color: "black",
+              textDecoration: "none",
             }}
           >
             KELLY STONE
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+            {/* <IconButton
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
@@ -60,8 +64,8 @@ const ResponsiveAppBar = () => {
               color="inherit"
             >
               <MenuIcon />
-            </IconButton>
-            <Menu
+            </IconButton> */}
+            {/* <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
@@ -84,7 +88,7 @@ const ResponsiveAppBar = () => {
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
-            </Menu>
+            </Menu> */}
           </Box>
           <Typography
             color="black"
@@ -94,29 +98,29 @@ const ResponsiveAppBar = () => {
             href=""
             sx={{
               mr: 2,
-              display: { xs: 'flex', md: 'none' },
+              display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: 'playfair display',
+              fontFamily: "playfair display",
               fontWeight: 500,
-              letterSpacing: '.3rem',
-              color: 'black',
-              textDecoration: 'none',
+              letterSpacing: ".3rem",
+              color: "black",
+              textDecoration: "none",
             }}
           >
             KELLY STONE
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: "white", display: "block" }}
               >
                 {page}
               </Button>
             ))}
           </Box>
-
+          {/* 
           <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' }}}>
           {pages.map((page) => (
               <Button
@@ -127,10 +131,48 @@ const ResponsiveAppBar = () => {
                 {page}
               </Button>
             ))}
-          </Box>
+          </Box> */}
+
+          <Button
+            onClick={handleOpen}
+            style={{
+              color: "black",
+              display: "block",
+              fontWeight: "400",
+              fontFamily: "Avenir",
+              letterSpacing: ".1rem",
+              textTransform: "none",
+              fontSize: "19px",
+            }}
+          >
+            Contact
+          </Button>
+          <Modal
+            open={open}
+            onClose={handleClose}
+            aria-labelledby="modal-modal-title"
+            aria-describedby="modal-modal-description"
+          >
+            <Box sx={style}>
+              <Contact></Contact>
+            </Box>
+          </Modal>
         </Toolbar>
       </Container>
     </AppBar>
   );
 };
+
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: 500,
+  bgcolor: "background.paper",
+  boxShadow: 24,
+  borderRadius: 10,
+  p: 4,
+};
+
 export default ResponsiveAppBar;

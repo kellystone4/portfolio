@@ -3,36 +3,47 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, Link } from "@mui/material";
 import ResponsiveAppBar from "../components/header";
 import { LinkedIn, Mail, GitHub } from "@mui/icons-material";
+import linkedin from "../imgs/linkedin.png";
+import mail from "../imgs/mail.jpg";
+import github from "../imgs/github.png";
+import Masonry from "react-masonry-css";
+import ReactDOM from "react-dom";
+import Modal from "react-modal";
+
+// import { BrowserRouter } from "react-router-dom";
 
 export default class Contact extends Component {
   render() {
     const contactInfo = [
       {
-        img: LinkedIn,
+        img: linkedin,
         title: "LinkedIn",
+        link: "https://www.linkedin.com/in/kelly-a-stone/"
       },
       {
-        img: Mail,
+        img: mail,
         title: "Email",
+        link: "mailto: kellystone916@gmail.com"
       },
       {
-        img: GitHub,
+        img: github,
         title: "GitHub",
+        link: "https://github.com/kellystone4/"
       },
     ];
     return (
       <div
         style={{
           textAlign: "center",
-          backgroundColor: "#8CB0FF",
+        //   backgroundColor: "#8CB0FF",
           padding: "2%",
           borderRadius: "5%",
           alignSelf: "center",
-            flexDirection: "row",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            alignItems: "center",
-            width: "100%",
+          flexDirection: "row",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
         }}
       >
         <div style={{ textAlign: "center", backgroundColor: "#8CB0FF" }}>
@@ -74,6 +85,17 @@ export default class Contact extends Component {
               >
                 Contact Me
               </p>
+              <div
+            className="rectangle"
+            style={{
+              display: "inline-block",
+              width: "80px",
+              height: "10px",
+              background: "#8CB0FF",
+              borderRadius: "20%",
+              marginBottom: "2%",
+            }}
+          />
               <p
                 style={{
                   fontFamily: "avenir",
@@ -90,90 +112,33 @@ export default class Contact extends Component {
                   fontSize: "22px",
                   fontWeight: 500,
                   alignSelf: "center",
-            display: "flex",
-            flexDirection: "row",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            alignItems: "center",
-            width: "100%",
+                  display: "flex",
+                  flexDirection: "row",
+                  flexWrap: "wrap",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: "100%",
                 }}
               >
-
-
-
-{/* {contactInfo.map((d, i) => (
-        <div key={`${d.name}-${i}`} style={{textAlign: "center"}}>
-        <p>{d.text}</p>
-        <img  style={{height: "70px"}}
-              src={d.img}
-              className="iconImg"
-            />
-                        <p>{d.text}</p>
-
-        </div>
-      ))} */}
-
-              <div             style={{
-              color: "#000000",
-              fontSize: "30px",
-              textAlign: "center",
-              fontWeight: "400",
-              fontFamily: "Avenir",
-              letterSpacing: ".1rem",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              //   marginTop: 40,
-            }}>
-                <p >LinkedIn</p>
-                <br />
-                <Link a href="https://www.linkedin.com/in/kelly-a-stone/">
-                  <LinkedIn></LinkedIn>
-                </Link>
-                </div>
-
-                <div             style={{
-              color: "#000000",
-              fontSize: "30px",
-              textAlign: "center",
-              fontWeight: "400",
-              fontFamily: "Avenir",
-              letterSpacing: ".1rem",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              display: "flex",
-              flexGrow: 1,
-              //   marginTop: 40,
-            }}>
-                <p>Email</p>
-                <br />
-                <Link>
-                  <Mail />
-                </Link>
-                </div>
-
-
-                <div             style={{
-              color: "#000000",
-              fontSize: "30px",
-              textAlign: "center",
-              fontWeight: "400",
-              fontFamily: "Avenir",
-              letterSpacing: ".1rem",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              display: "flex",
-              flexGrow: 1,
-              //   marginTop: 40,
-            }}>
-                <p>Github</p>
-                <br />
-                <Link a href="https://github.com/kellystone4">
-                  <GitHub />
-                </Link>
-                </div>
+                <Masonry
+                  breakpointCols={3}
+                  className="my-masonry-grid"
+                  columnClassName="my-masonry-grid_column"
+                >
+                  {contactInfo.map((d, i) => (
+                    <div key={`${d.name}-${i}`} style={{ textAlign: "center" }}>
+                      <p>{d.title}</p>
+                      <Link href={d.link}>
+                      <img
+                        style={{ height: "70px", margin: 10 }}
+                        src={d.img}
+                        className="iconImg"
+                      />
+                      </Link>
+                      <p>{d.text}</p>
+                    </div>
+                  ))}
+                </Masonry>
               </div>
             </div>
           </div>
