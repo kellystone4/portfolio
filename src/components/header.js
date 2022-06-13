@@ -14,8 +14,9 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { Modal } from "@mui/material";
 import Contact from "../pages/Contact";
+import { Link } from "react-router-dom";
 
-const pages = ["About", "Portfolio"];
+const pages = ["Portfolio"];
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -36,6 +37,7 @@ const ResponsiveAppBar = () => {
     <AppBar position="static" style={{ backgroundColor: "white" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+          <Link to="/" style={{textDecoration: "none"}}>
           <Typography
             variant="h6"
             noWrap
@@ -53,6 +55,7 @@ const ResponsiveAppBar = () => {
           >
             KELLY STONE
           </Typography>
+          </Link>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             {/* <IconButton
@@ -120,9 +123,10 @@ const ResponsiveAppBar = () => {
               </Button>
             ))}
           </Box>
-          {/* 
+          
           <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' }}}>
           {pages.map((page) => (
+            <Link to={page} style={{textDecoration: "none"}}>
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
@@ -130,8 +134,9 @@ const ResponsiveAppBar = () => {
               >
                 {page}
               </Button>
+              </Link>
             ))}
-          </Box> */}
+          </Box>
 
           <Button
             onClick={handleOpen}
