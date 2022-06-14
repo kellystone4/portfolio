@@ -165,13 +165,13 @@ export default class About extends Component {
           <p
             style={{
               color: "#000000",
-              fontSize: "23px",
+              fontSize: "21px",
               textAlign: "center",
               fontWeight: "400",
               fontFamily: "Avenir",
               letterSpacing: ".1rem",
-              marginLeft: "10%",
-              marginRight: "10%",
+              marginLeft: "15%",
+              marginRight: "15%",
               margin: "5%",
             }}
           >
@@ -181,7 +181,7 @@ export default class About extends Component {
             engineering, ux design, and product management. I am currently based
             in Los Angeles, CA.
           </p>
-          <p
+          {/* <p
             style={{
               color: "#000000",
               fontSize: "23px",
@@ -200,7 +200,7 @@ export default class About extends Component {
             M.S. Software Development, Boston University
             <br></br>
             Certificate Full-Stack Development, UC Berkeley
-          </p>
+          </p> */}
         </div>
 
         <div className="skillsContainer">
