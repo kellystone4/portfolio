@@ -48,64 +48,27 @@ export default class About extends Component {
         text: "HTML",
       },
     ];
-    
+
     return (
       <div>
         <div
           className="mainContent"
-          style={{
-            alignSelf: "center",
-            display: "flex",
-            flexDirection: "row",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            alignItems: "center",
-            width: "100%",
-          }}
+          style={styles.mainContent}
         >
           <p
-            style={{
-              color: "#000000",
-              fontSize: "40px",
-              textAlign: "center",
-              fontWeight: "400",
-              fontFamily: "Avenir",
-              letterSpacing: ".1rem",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              maxWidth: 600,
-            }}
+            style={styles.contentTitle}
           >
             Passionate about the intersection between design and development
 
-<Typography align="center">
-<a href="https://docs.google.com/document/d/1yG-KM8P53XoFjifVBGUsLYk9Td4qrmLo2lMX8AK0R5s/edit#heading=h.gdydvfgitvot"  style={{
-                  textDecoration: 'none',
-                  textTransform: "none",
-
-                }}>
-              <Button
-                style={{
-                  marginTop: "10%",
-                  backgroundColor: "#407BFF",
-                  textTransform: "none",
-                  borderRadius: "15%",
-                  padding: "3%",
-                  color: "white",
-                  // margin: "10%",
-                  fontSize: "22px",
-                  textAlign: "center",
-                  fontWeight: "500",
-                  fontFamily: "Avenir",
-                  letterSpacing: ".2rem",
-                  textDecoration: 'none',
-                  textTransform: "none",
-
-                }}
+            <Typography align="center">
+              <a href="https://docs.google.com/document/d/1yG-KM8P53XoFjifVBGUsLYk9Td4qrmLo2lMX8AK0R5s/edit#heading=h.gdydvfgitvot"
+                style={styles.link}
               >
-                My Resume
-              </Button>
+                <Button
+                  style={styles.btn}
+                >
+                  My Resume
+                </Button>
               </a>
             </Typography>
           </p>
@@ -114,41 +77,22 @@ export default class About extends Component {
             alt="home-Image"
             border="0"
             height="600px"
-            style={{
-              display: "flex",
-              flexGrow: 1,
-              minWidth: 600,
-              maxWidth: 600,
-            }}
+            style={styles.img}
           ></img>
         </div>
 
         <div
           className="aboutMeContent"
-          style={{ padding: "5%", textAlign: "center" }}
+          style={styles.aboutMeContainer}
         >
           <p
-            style={{
-              color: "#000000",
-              fontSize: "30px",
-              textAlign: "center",
-              fontWeight: "500",
-              fontFamily: "Avenir",
-              letterSpacing: ".2rem",
-            }}
+            style={styles.aboutMeTitle}
           >
             About Me
           </p>
           <div
             className="rectangle"
-            style={{
-              display: "inline-block",
-              width: "80px",
-              height: "10px",
-              background: "#8CB0FF",
-              borderRadius: "20%",
-              marginBottom: "2%",
-            }}
+            style={styles.lineBreak}
           />
           <div className="aboutMeImg">
             {/* <Kelly></Kelly> */}
@@ -163,17 +107,7 @@ export default class About extends Component {
             ></img>
           </div>
           <p
-            style={{
-              color: "#000000",
-              fontSize: "21px",
-              textAlign: "center",
-              fontWeight: "400",
-              fontFamily: "Avenir",
-              letterSpacing: ".1rem",
-              marginLeft: "15%",
-              marginRight: "15%",
-              margin: "5%",
-            }}
+            style={styles.aboutMeContent}
           >
             Hi, I’m Kelly! I am a UX engineer and a recent software development
             graduate. I have an educational background in software development
@@ -205,26 +139,12 @@ export default class About extends Component {
 
         <div className="skillsContainer">
           <p
-            style={{
-              fontSize: "25px",
-              textAlign: "center",
-              fontWeight: "500",
-              fontFamily: "Avenir",
-              letterSpacing: ".1rem",
-              marginTop: "-2%",
-            }}
+            style={styles.skillsTitle}
           >
             Relevant Skills
           </p>
           <p
-            style={{
-              fontSize: "20px",
-              textAlign: "center",
-              fontWeight: "500",
-              fontFamily: "Avenir",
-              letterSpacing: ".1rem",
-              margin: "5%",
-            }}
+            style={styles.skillsContent}
           >
             <Masonry
               breakpointCols={3}
@@ -251,9 +171,7 @@ export default class About extends Component {
   }
 }
 const styles = {
-  mainContentContainer: {
-    paddingTop: 20,
-    paddingBottom: 20,
+  mainContent: {
     alignSelf: "center",
     display: "flex",
     flexDirection: "row",
@@ -261,62 +179,89 @@ const styles = {
     justifyContent: "center",
     alignItems: "center",
     width: "100%",
-    maxWidth: 1200,
   },
-  mainContent: {
+  contentTitle: {
+    color: "#000000",
+    fontSize: "40px",
+    textAlign: "center",
+    fontWeight: "400",
+    fontFamily: "Avenir",
+    letterSpacing: ".1rem",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     maxWidth: 600,
-    marginTop: 40,
   },
-  imageContainer: {
+  link: {
+    textDecoration: "none",
+    textTransform: "none"
+  },
+  btn: {
+    marginTop: "10%",
+    backgroundColor: "#407BFF",
+    textTransform: "none",
+    borderRadius: "15%",
+    padding: "3%",
+    color: "white",
+    fontSize: "22px",
+    textAlign: "center",
+    fontWeight: "500",
+    fontFamily: "Avenir",
+    letterSpacing: ".2rem",
+    textDecoration: 'none',
+    textTransform: "none",
+  },
+  img: {
     display: "flex",
     flexGrow: 1,
-    minWidth: 300,
-    maxWidth: 500,
+    minWidth: 600,
+    maxWidth: 600,
   },
-  logoContainer: {
-    display: "flex",
-    flexGrow: 1,
-    height: 85,
+  aboutMeContainer: {
+    padding: "5%",
+    textAlign: "center"
   },
-  logoHipaaContainer: {
-    display: "flex",
-    flexGrow: 1,
-    width: 35,
-    marginLeft: 10,
-    marginRight: 10,
+  aboutMeTitle: {
+    color: "#000000",
+    fontSize: "30px",
+    textAlign: "center",
+    fontWeight: "500",
+    fontFamily: "Avenir",
+    letterSpacing: ".2rem",
   },
-  mainContentImg: {
-    width: "150%",
-    height: "150%",
-    objectFit: "contain",
+  lineBreak: {
+    display: "inline-block",
+    width: "80px",
+    height: "10px",
+    background: "#8CB0FF",
+    borderRadius: "20%",
+    marginBottom: "2%",
   },
-  titleGreen: {
-    color: "#179ad9",
-    fontWeight: "600",
+  aboutMeContent: {
+    color: "#000000",
+    fontSize: "21px",
+    textAlign: "center",
+    fontWeight: "400",
+    fontFamily: "Avenir",
+    letterSpacing: ".1rem",
+    marginLeft: "15%",
+    marginRight: "15%",
+    margin: "5%",
   },
-  subtitleContainer: {
-    margin: 10,
+  skillsTitle: {
+    fontSize: "25px",
+    textAlign: "center",
+    fontWeight: "500",
+    fontFamily: "Avenir",
+    letterSpacing: ".1rem",
+    marginTop: "-2%",
   },
-  subtitle: {
-    marginTop: 10,
-    fontSize: 18,
-    color: "#4F4F4F",
-  },
-  row: {
-    display: "flex",
-    flexDirection: "row",
-  },
-  button: {
-    display: "flex",
-    marginTop: 10,
-  },
-  mainHeader: {
-    fontSize: 16,
-  },
-  buttonText: {
-    fontSize: 15,
-  },
+  skillsContent: {
+    fontSize: "20px",
+    textAlign: "center",
+    fontWeight: "500",
+    fontFamily: "Avenir",
+    letterSpacing: ".1rem",
+    margin: "5%",
+  }
 };

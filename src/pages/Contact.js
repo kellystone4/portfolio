@@ -4,7 +4,7 @@ import { Button, Link } from "@mui/material";
 import ResponsiveAppBar from "../components/header";
 import { LinkedIn, Mail, GitHub } from "@mui/icons-material";
 import linkedin from "../imgs/linkedin.png";
-import mail from "../imgs/mail.jpg";
+import mail from "../imgs/emailIcon.png";
 import github from "../imgs/github.png";
 import Masonry from "react-masonry-css";
 import ReactDOM from "react-dom";
