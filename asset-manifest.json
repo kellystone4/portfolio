@@ -1,14 +1,15 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.31b1e74f.css",
-    "main.js": "/portfolio/static/js/main.20b681b8.js",
+    "main.js": "/portfolio/static/js/main.95fa37f3.js",
     "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
     "static/media/KellyImg.png": "/portfolio/static/media/KellyImg.af497acd0e7dbeb5a257.png",
     "static/media/homeImage.png": "/portfolio/static/media/homeImage.3a6781bec01cc6efbd32.png",
+    "static/media/valorantMobile.png": "/portfolio/static/media/valorantMobile.5fd62993bd00c8f8ba1c.png",
     "static/media/react.png": "/portfolio/static/media/react.81ed438b18e24116794d.png",
     "static/media/js.jpg": "/portfolio/static/media/js.ca3010ab24ae902f0b2d.jpg",
-    "static/media/mail.jpg": "/portfolio/static/media/mail.0db9ff590cf493db95b7.jpg",
     "static/media/adobe.png": "/portfolio/static/media/adobe.26af061627cf107d32c8.png",
+    "static/media/emailIcon.png": "/portfolio/static/media/emailIcon.cd19bc09c109c425fb47.png",
     "static/media/linkedin.png": "/portfolio/static/media/linkedin.ab7644f18965cdeea483.png",
     "static/media/valorant.jpg": "/portfolio/static/media/valorant.e885f6d8868ae642074f.jpg",
     "static/media/figma.webp": "/portfolio/static/media/figma.d6d2ec9d4cbda758c304.webp",
@@ -16,11 +17,11 @@
     "static/media/logo.svg": "/portfolio/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/portfolio/index.html",
     "main.31b1e74f.css.map": "/portfolio/static/css/main.31b1e74f.css.map",
-    "main.20b681b8.js.map": "/portfolio/static/js/main.20b681b8.js.map",
+    "main.95fa37f3.js.map": "/portfolio/static/js/main.95fa37f3.js.map",
     "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.31b1e74f.css",
-    "static/js/main.20b681b8.js"
+    "static/js/main.95fa37f3.js"
   ]
 }
