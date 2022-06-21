@@ -8,7 +8,7 @@ export default class footer extends Component {
   render() {
     return (
       <div>
-      <BottomNavigation style={{marginTop: -50}}
+      <BottomNavigation
 >
 <Link style={{paddingRight: 40, paddingLeft: 40}} href="https://github.com/kellystone4">
   <BottomNavigationAction label="Recents" icon={<GitHub style={styles.icon} />} />

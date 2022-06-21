@@ -76,7 +76,6 @@ export default class About extends Component {
             src={homeImg}
             alt="home-Image"
             border="0"
-            height="600px"
             style={styles.img}
           ></img>
         </div>
@@ -115,10 +114,10 @@ export default class About extends Component {
             engineering, ux design, and product management. I am currently based
             in Los Angeles, CA.
           </p>
-          {/* <p
+          <p
             style={{
               color: "#000000",
-              fontSize: "23px",
+              fontSize: "20px",
               textAlign: "center",
               fontWeight: "400",
               fontFamily: "Avenir",
@@ -134,7 +133,7 @@ export default class About extends Component {
             M.S. Software Development, Boston University
             <br></br>
             Certificate Full-Stack Development, UC Berkeley
-          </p> */}
+          </p>
         </div>
 
         <div className="skillsContainer">
@@ -182,7 +181,7 @@ const styles = {
   },
   contentTitle: {
     color: "#000000",
-    fontSize: "40px",
+    fontSize: "38px",
     textAlign: "center",
     fontWeight: "400",
     fontFamily: "Avenir",
@@ -191,6 +190,9 @@ const styles = {
     flexDirection: "column",
     justifyContent: "center",
     maxWidth: 600,
+    minWidth: 300,
+    fontSize: "40px",
+    // fontSize: "7vw",
   },
   link: {
     textDecoration: "none",
@@ -203,7 +205,7 @@ const styles = {
     borderRadius: "15%",
     padding: "3%",
     color: "white",
-    fontSize: "22px",
+    fontSize: "20px",
     textAlign: "center",
     fontWeight: "500",
     fontFamily: "Avenir",
@@ -214,7 +216,7 @@ const styles = {
   img: {
     display: "flex",
     flexGrow: 1,
-    minWidth: 600,
+    minWidth: 300,
     maxWidth: 600,
   },
   aboutMeContainer: {

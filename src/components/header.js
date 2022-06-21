@@ -16,7 +16,7 @@ import { Modal } from "@mui/material";
 import Contact from "../pages/Contact";
 import { Link } from "react-router-dom";
 
-const pages = ["Portfolio"];
+const pages = ["Portfolio", "Contact"];
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -35,8 +35,10 @@ const ResponsiveAppBar = () => {
 
   return (
     <AppBar position="static" style={{ backgroundColor: "white" }}>
-      <Container maxWidth="xl">
+      <Container>
         <Toolbar disableGutters>
+
+        {/* TITLE */}
           <Link to="/" style={{textDecoration: "none"}}>
           <Typography
             variant="h6"
@@ -57,18 +59,18 @@ const ResponsiveAppBar = () => {
           </Typography>
           </Link>
 
+{/* HAMBURGER MENU */}
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            {/* <IconButton
+            <IconButton
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
             >
               <MenuIcon />
-            </IconButton> */}
-            {/* <Menu
+            </IconButton> 
+            <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
@@ -87,11 +89,14 @@ const ResponsiveAppBar = () => {
               }}
             >
               {pages.map((page) => (
+                 <Link to={page} style={{textDecoration: "none"}}>
+
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
+                </Link>
               ))}
-            </Menu> */}
+            </Menu> 
           </Box>
           <Typography
             color="black"
@@ -112,7 +117,8 @@ const ResponsiveAppBar = () => {
           >
             KELLY STONE
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+
+          {/* <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
                 key={page}
@@ -122,7 +128,7 @@ const ResponsiveAppBar = () => {
                 {page}
               </Button>
             ))}
-          </Box>
+          </Box> */}
           
           <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' }}}>
           {pages.map((page) => (
@@ -138,7 +144,7 @@ const ResponsiveAppBar = () => {
             ))}
           </Box>
 
-          <Button
+          {/* <Button
             onClick={handleOpen}
             style={{
               color: "black",
@@ -151,7 +157,7 @@ const ResponsiveAppBar = () => {
             }}
           >
             Contact
-          </Button>
+          </Button> */}
           <Modal
             open={open}
             onClose={handleClose}
@@ -173,7 +179,8 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 500,
+  maxWidth: 600,
+  mixWidth: 250,
   bgcolor: "background.paper",
   boxShadow: 24,
   borderRadius: 10,
