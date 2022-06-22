@@ -16,6 +16,11 @@ import Masonry from "react-masonry-css";
 
 const Portfolio = ({ }) => {
   const theme = useTheme();
+  const breakpointColumnsObj = {
+    default: 1,
+    1150: 1,
+    500: 0
+  };
 
   const portfolioInfo = [
     {
@@ -59,7 +64,9 @@ const Portfolio = ({ }) => {
         style={styles.lineBreak}
       />
       <div className="aboutMeContainer">
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div style={{display: "grid",
+  columns: "repeat(auto-fit, 20rem)",
+  justifyContent: "center"}}>
           {/* <div
           className="aboutMeContent"
           style={styles.aboutMeContent}
@@ -123,14 +130,21 @@ const Portfolio = ({ }) => {
  >
 
 <Grid item xs={3}> */}
-
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className="my-masonry-grid"
+        columnClassName="my-masonry-grid_column"
+      >
               <Card sx={styles.card}>
                 <CardActionArea>
+                <Link href={d.link} style={styles.link}>
+
                   <CardMedia
                     src={d.img}
                     component="img"
                     alt="green iguana"
                   />
+                  </Link>
                   <CardContent>
                     <Typography gutterBottom variant="h5" component="div" sx={styles.title} >
                       {d.title}
@@ -148,12 +162,15 @@ const Portfolio = ({ }) => {
 
                     </Typography>
                   </CardContent>
-                </CardActionArea>
+                  </CardActionArea>
               </Card>
+              </Masonry>
+              
               {/* </Grid>       */}
               {/* //  </Grid> */}
             </div>
           ))}
+          
         </div>
       </div>
     </div>
@@ -199,8 +216,8 @@ const styles = {
     marginRight: "12%",
     marginLeft: "12%",
     alignItems: "center",
-    maxWidth: 400,
-    minWidth: 300
+    maxWidth: 600,
+    // minWidth: 300
   },
   link: {
     textTransform: "none"
@@ -211,7 +228,8 @@ const styles = {
   box: {
     display: "flex",
     flexDirection: "column",
-    margin: "4%"
+    margin: "4%",
+    textTransform: "none"
   },
   box2: {
     display: "flex",
@@ -230,5 +248,34 @@ const styles = {
     fontWeight: "600",
     fontFamily: "avenir",
     color: "#407BFF"
-  }
+  },
+
+
+
+
+  // container: {
+  //   marginTop: 30,
+  //   paddingBottom: 30
+  // },
+  // header: {
+  //   padding: 15
+  // },
+  // title: {
+  //   fontSize: 28
+  // },
+  // titleGreen: {
+  //   color: "#179ad9",
+  //   fontWeight: "600"
+  // },
+  // subtitleContainer: {
+  //   marginTop: 20
+  // },
+  // subtitle: {
+  //   fontSize: 15,
+  //   color: "#4F4F4F"
+  // },
+  // servicesContainer: {
+  //   display: "flex",
+  //   flexDirection: "row"
+  // }
 }
