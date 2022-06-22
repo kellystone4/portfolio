@@ -110,8 +110,7 @@ export default class About extends Component {
           >
             Hi, I’m Kelly! I am a UX engineer and a recent software development
             graduate. I have an educational background in software development
-            and am self-taught in UX design. My career interests are in software
-            engineering, ux design, and product management. I am currently based
+            and am self-taught in UX design. I am currently based
             in Los Angeles, CA.
           </p>
           <p

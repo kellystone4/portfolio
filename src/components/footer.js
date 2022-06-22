@@ -28,6 +28,6 @@ const styles = {
     icon: {
         fontSize: "40px",
         marginTop: -20,
-        color: "#407BFF",    
+        color: "black",    
     }
 }

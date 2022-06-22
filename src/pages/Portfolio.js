@@ -9,6 +9,10 @@ import valorant from "../imgs/valorant.jpg";
 import techTalk from "../imgs/tt.png";
 import valorantMobile from "../imgs/valorantMobile.png"
 import { Link } from '@mui/material';
+import { CardActionArea } from '@mui/material';
+import Masonry from "react-masonry-css";
+// import Grid from "@mui/material";
+
 
 const Portfolio = ({ }) => {
   const theme = useTheme();
@@ -55,13 +59,14 @@ const Portfolio = ({ }) => {
         style={styles.lineBreak}
       />
       <div className="aboutMeContainer">
-        <div
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          {/* <div
           className="aboutMeContent"
           style={styles.aboutMeContent}
-        >
+        > */}
           {portfolioInfo.map((d, i) => (
-            <div key={`${d.name}-${i}`} style={styles.cardDiv}>
-              <Card
+            <div key={`${d.name}-${i}`}>
+              {/* <Card
                 sx={styles.card}
               >
                 <Link href={d.link} style={styles.link}>
@@ -80,7 +85,7 @@ const Portfolio = ({ }) => {
                 <Box
                   style={styles.box}
                 >
-                  <CardContent sx={{ flex: "1 0 auto" }}>
+                  <CardContent>
                     <Typography
                       component="div"
                       fontSize="28px"
@@ -106,7 +111,47 @@ const Portfolio = ({ }) => {
                     </Box>
                   </CardContent>
                 </Box>
+              </Card>  */}
+
+              {/* <Grid
+  container
+  spacing={0}
+  direction="column"
+  alignItems="center"
+  justify="center"
+  style={{ minHeight: '100vh' }}
+ >
+
+<Grid item xs={3}> */}
+
+              <Card sx={styles.card}>
+                <CardActionArea>
+                  <CardMedia
+                    src={d.img}
+                    component="img"
+                    alt="green iguana"
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div" sx={styles.title} >
+                      {d.title}
+                    </Typography>
+                    <Typography variant="subtitle1"
+                      fontSize="20px"
+                      fontWeight="600"
+                      fontFamily="avenir"
+                      color="#407BFF"
+                      component="div">
+                      {d.subtitle}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary" sx={styles.box2}>
+                      {d.text}
+
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
               </Card>
+              {/* </Grid>       */}
+              {/* //  </Grid> */}
             </div>
           ))}
         </div>
@@ -154,6 +199,8 @@ const styles = {
     marginRight: "12%",
     marginLeft: "12%",
     alignItems: "center",
+    maxWidth: 400,
+    minWidth: 300
   },
   link: {
     textTransform: "none"
@@ -170,6 +217,18 @@ const styles = {
     display: "flex",
     alignItems: "center",
     margin: "3%",
-    fontSize: "17px",
-}
+    fontSize: "15px",
+    fontFamily: "avenir"
+  },
+  title: {
+    fontSize: "28px",
+    fontFamily: "avenir",
+    fontWeight: "500"
+  },
+  subtitle: {
+    fontSize: "20px",
+    fontWeight: "600",
+    fontFamily: "avenir",
+    color: "#407BFF"
+  }
 }
