@@ -28,7 +28,7 @@ const Portfolio = ({ }) => {
       title: "Valorant Health",
       subtitle: "UX Engineer",
       text: "Valorant Health is a tele-health start-up based in Berkeley, CA. I designed mockups for the web and mobile application with AdobeXD and developed components using React.",
-      link: "www.valoranthealth.com"
+      link: "https://www.valoranthealth.com/"
     },
     {
       img: valorantMobile,
@@ -64,16 +64,18 @@ const Portfolio = ({ }) => {
         style={styles.lineBreak}
       />
       <div className="aboutMeContainer">
-        <div style={{display: "grid",
-  columns: "repeat(auto-fit, 20rem)",
-  justifyContent: "center"}}>
+        <div style={{
+          display: "grid",
+          columns: "repeat(auto-fit, 20rem)",
+          justifyContent: "center"
+        }}>
           {/* <div
           className="aboutMeContent"
           style={styles.aboutMeContent}
         > */}
           {portfolioInfo.map((d, i) => (
             <div key={`${d.name}-${i}`}>
-              {/* <Card
+              <Card
                 sx={styles.card}
               >
                 <Link href={d.link} style={styles.link}>
@@ -118,7 +120,7 @@ const Portfolio = ({ }) => {
                     </Box>
                   </CardContent>
                 </Box>
-              </Card>  */}
+              </Card>
 
               {/* <Grid
   container
@@ -130,7 +132,10 @@ const Portfolio = ({ }) => {
  >
 
 <Grid item xs={3}> */}
-      <Masonry
+
+              {/* MASONRY */}
+
+              {/* <Masonry
         breakpointCols={breakpointColumnsObj}
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
@@ -164,13 +169,13 @@ const Portfolio = ({ }) => {
                   </CardContent>
                   </CardActionArea>
               </Card>
-              </Masonry>
-              
+              </Masonry> */}
+
               {/* </Grid>       */}
               {/* //  </Grid> */}
             </div>
           ))}
-          
+
         </div>
       </div>
     </div>
@@ -216,7 +221,7 @@ const styles = {
     marginRight: "12%",
     marginLeft: "12%",
     alignItems: "center",
-    maxWidth: 600,
+    // maxWidth: 600,
     // minWidth: 300
   },
   link: {
