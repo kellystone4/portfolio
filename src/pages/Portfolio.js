@@ -75,7 +75,7 @@ const Portfolio = ({ }) => {
         > */}
           {portfolioInfo.map((d, i) => (
             <div key={`${d.name}-${i}`}>
-              <Card
+              {/* <Card
                 sx={styles.card}
               >
                 <Link href={d.link} style={styles.link}>
@@ -120,7 +120,7 @@ const Portfolio = ({ }) => {
                     </Box>
                   </CardContent>
                 </Box>
-              </Card>
+              </Card> */}
 
               {/* <Grid
   container
@@ -135,7 +135,7 @@ const Portfolio = ({ }) => {
 
               {/* MASONRY */}
 
-              {/* <Masonry
+               <Masonry
         breakpointCols={breakpointColumnsObj}
         className="my-masonry-grid"
         columnClassName="my-masonry-grid_column"
@@ -169,7 +169,7 @@ const Portfolio = ({ }) => {
                   </CardContent>
                   </CardActionArea>
               </Card>
-              </Masonry> */}
+              </Masonry> 
 
               {/* </Grid>       */}
               {/* //  </Grid> */}
@@ -221,7 +221,7 @@ const styles = {
     marginRight: "12%",
     marginLeft: "12%",
     alignItems: "center",
-    // maxWidth: 600,
+    maxWidth: 600,
     // minWidth: 300
   },
   link: {
