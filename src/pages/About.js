@@ -201,7 +201,7 @@ const styles = {
     marginTop: "10%",
     backgroundColor: "#407BFF",
     textTransform: "none",
-    borderRadius: "15%",
+    borderRadius: "20px",
     padding: "3%",
     color: "white",
     fontSize: "20px",
