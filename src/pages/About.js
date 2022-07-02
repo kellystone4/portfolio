@@ -110,13 +110,13 @@ export default class About extends Component {
           >
             Hi, I’m Kelly! I am a UX engineer and a recent software development
             graduate. I have an educational background in software development
-            and am self-taught in UX design. I am currently based
+            and have completed the Google Foundations of UX Design certificate. I am currently based
             in Los Angeles, CA.
           </p>
           <p
             style={{
               color: "#000000",
-              fontSize: "20px",
+              fontSize: "19px",
               textAlign: "center",
               fontWeight: "400",
               fontFamily: "Avenir",
@@ -131,8 +131,11 @@ export default class About extends Component {
             <br></br>
             M.S. Software Development, Boston University
             <br></br>
-            Certificate Full-Stack Development, UC Berkeley
+            Certificate in Full-Stack Development, UC Berkeley
+            <br/>
+            Certificate in Foundations of UX Design, Google
           </p>
+          
         </div>
 
         <div className="skillsContainer">
@@ -263,6 +266,17 @@ const styles = {
     fontWeight: "500",
     fontFamily: "Avenir",
     letterSpacing: ".1rem",
+    margin: "5%",
+  },
+  education: {
+    color: "#000000",
+    fontSize: "19px",
+    textAlign: "center",
+    fontWeight: "400",
+    fontFamily: "Avenir",
+    letterSpacing: ".1rem",
+    marginLeft: "10%",
+    marginRight: "10%",
     margin: "5%",
   }
 };
